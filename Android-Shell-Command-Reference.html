@@ -1,0 +1,1037 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class=" is-copy-enabled is-u2f-enabled">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset='utf-8'>
+
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-536bcdee57776d99649d118d29a291c9d7b41d101696162d6456c87b07314253.css" integrity="sha256-U2vN7ld3bZlknRGNKaKRyde0HRAWlhYtZFbIewcxQlM=" media="all" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-f4983a8c20dde524bf80c26549c67dcb3c74450ce6800b50205d9d6a01712ec7.css" integrity="sha256-9Jg6jCDd5SS/gMJlScZ9yzx0RQzmgAtQIF2dagFxLsc=" media="all" rel="stylesheet" />
+    
+    
+    
+    
+
+    <link as="script" href="https://assets-cdn.github.com/assets/frameworks-7fabbae774a2bd1d0d1b9416ee3e5e76d972482e598730893e49ef6024d87fa1.js" rel="preload" />
+    
+    <link as="script" href="https://assets-cdn.github.com/assets/github-207236d9c34ff5ba0c5941f877df52c9b53c4ddad9a125c5d2094fed3300ea17.js" rel="preload" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width">
+    
+    
+    <title>Android Shell Command Reference · jackpal/Android-Terminal-Emulator Wiki</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="https://avatars2.githubusercontent.com/u/175575?v=3&amp;s=400" name="twitter:image:src" /><meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="jackpal/Android-Terminal-Emulator" name="twitter:title" /><meta content="Android-Terminal-Emulator - A VT-100 terminal emulator for the Android OS" name="twitter:description" />
+      <meta content="https://avatars2.githubusercontent.com/u/175575?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="jackpal/Android-Terminal-Emulator" property="og:title" /><meta content="https://github.com/jackpal/Android-Terminal-Emulator" property="og:url" /><meta content="Android-Terminal-Emulator - A VT-100 terminal emulator for the Android OS" property="og:description" />
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    <link rel="web-socket" href="wss://live.github.com/_sockets/MTk0ODE4MjQ6YTJhMmZhMzM3OGFmZDI3ZTBlOGRlMzZjNWYzMWY0MmQ6ZWYzYzIwZGVmMGE2ZGM1ZjA0MzZmNmY1OWZlNGQ3NjNmMTQwNWNiYTRkOGYyNjIyNGNkMGIyYzFkZDZhNjdkZg==--eaf40c96e08c755bf1e1660244f79c2415033d1e">
+    <meta name="pjax-timeout" content="1000">
+    <link rel="sudo-modal" href="/sessions/sudo_modal">
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_wiki" data-pjax-transient>
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="2D118CC9:4C3B:3F00571:573EE2ED" name="octolytics-dimension-request_id" /><meta content="19481824" name="octolytics-actor-id" /><meta content="savalaraymond" name="octolytics-actor-login" /><meta content="4c82098cda104faff53fe5f29ebdcd6d1aac41e8d6f7612be837b69e174f1e89" name="octolytics-actor-hash" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/wiki/show" data-pjax-transient="true" name="analytics-location" />
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged In">
+    <meta class="js-ga-set" name="dimension3" content="desktop">
+
+
+
+        <meta name="hostname" content="github.com">
+    <meta name="user-login" content="savalaraymond">
+
+        <meta name="expected-hostname" content="github.com">
+      <meta name="js-proxy-site-detection-payload" content="NjkyZTIxMTVjM2Q0OWY4MjRlMjc4MjQ0MGRiNjc2OTIwMWJiOGMwYzc5MWIzYzhjY2ViZjgxOGRhYzRhYWMyNHx7InJlbW90ZV9hZGRyZXNzIjoiNDUuMTcuMTQwLjIwMSIsInJlcXVlc3RfaWQiOiIyRDExOENDOTo0QzNCOjNGMDA1NzE6NTczRUUyRUQiLCJ0aW1lc3RhbXAiOjE0NjM3MzkxMTd9">
+
+
+      <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0">
+      <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+    <meta name="html-safe-nonce" content="cc7bee2044f2a9b1e5622fe1d3f8180d0a53f1ad">
+    <meta content="b9896379d696d8a573afe8d3dcc5921c0c935580" name="form-nonce" />
+
+    <meta http-equiv="x-pjax-version" content="14ab282ff8dc31485291a74951bb6754">
+    
+
+      
+  <meta name="description" content="Android-Terminal-Emulator - A VT-100 terminal emulator for the Android OS">
+  <meta name="go-import" content="github.com/jackpal/Android-Terminal-Emulator git https://github.com/jackpal/Android-Terminal-Emulator.git">
+
+  <meta content="175575" name="octolytics-dimension-user_id" /><meta content="jackpal" name="octolytics-dimension-user_login" /><meta content="887840" name="octolytics-dimension-repository_id" /><meta content="jackpal/Android-Terminal-Emulator" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="887840" name="octolytics-dimension-repository_network_root_id" /><meta content="jackpal/Android-Terminal-Emulator" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/jackpal/Android-Terminal-Emulator/commits/master.atom" rel="alternate" title="Recent Commits to Android-Terminal-Emulator:master" type="application/atom+xml">
+
+
+  </head>
+
+
+  <body class="logged-in   env-production  vis-public">
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"></div>
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+
+    
+    
+    
+
+
+
+        <div class="header header-logged-in true" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <svg aria-hidden="true" class="octicon octicon-mark-github" height="28" version="1.1" viewBox="0 0 16 16" width="28"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+</a>
+
+
+        <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
+  <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/jackpal/Android-Terminal-Emulator/search" class="js-site-search-form" data-scoped-search-url="/jackpal/Android-Terminal-Emulator/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <label class="form-control header-search-wrapper js-chromeless-input-container">
+      <div class="header-search-scope">This repository</div>
+      <input type="text"
+        class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable"
+        data-hotkey="s"
+        name="q"
+        placeholder="Search"
+        aria-label="Search this repository"
+        data-unscoped-placeholder="Search GitHub"
+        data-scoped-placeholder="Search"
+        tabindex="1"
+        autocapitalize="off">
+    </label>
+</form></div>
+
+
+      <ul class="header-nav left" role="navigation">
+        <li class="header-nav-item">
+          <a href="/pulls" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls">
+            Pull requests
+</a>        </li>
+        <li class="header-nav-item">
+          <a href="/issues" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:issues context:user" data-hotkey="g i" data-selected-links="/issues /issues/assigned /issues/mentioned /issues">
+            Issues
+</a>        </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://gist.github.com/" data-ga-click="Header, go to gist, text:gist">Gist</a>
+          </li>
+      </ul>
+
+    
+<ul class="header-nav user-nav right" id="user-links">
+  <li class="header-nav-item">
+    
+
+  </li>
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link tooltipped tooltipped-s js-menu-target" href="/new"
+       aria-label="Create new…"
+       data-ga-click="Header, create new, icon:add">
+      <svg aria-hidden="true" class="octicon octicon-plus left" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"></path></svg>
+      <span class="dropdown-caret"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+      <ul class="dropdown-menu dropdown-menu-sw">
+        
+<a class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+  <a class="dropdown-item" href="/new/import" data-ga-click="Header, import a repository">
+    Import repository
+  </a>
+
+
+  <a class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+
+
+      </ul>
+    </div>
+  </li>
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link name tooltipped tooltipped-sw js-menu-target" href="/savalaraymond"
+       aria-label="View profile and more"
+       data-ga-click="Header, show menu, icon:avatar">
+      <img alt="@savalaraymond" class="avatar" height="20" src="https://avatars2.githubusercontent.com/u/19481824?v=3&amp;s=40" width="20" />
+      <span class="dropdown-caret"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+      <div class="dropdown-menu  dropdown-menu-sw">
+        <div class=" dropdown-header header-nav-current-user css-truncate">
+            Signed in as <strong class="css-truncate-target">savalaraymond</strong>
+
+        </div>
+
+
+        <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item" href="/savalaraymond" data-ga-click="Header, go to profile, text:your profile">
+            Your profile
+          </a>
+        <a class="dropdown-item" href="/stars" data-ga-click="Header, go to starred repos, text:your stars">
+          Your stars
+        </a>
+          <a class="dropdown-item" href="/explore" data-ga-click="Header, go to explore, text:explore">
+            Explore
+          </a>
+          <a class="dropdown-item" href="/integrations" data-ga-click="Header, go to integrations, text:integrations">
+            Integrations
+          </a>
+        <a class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">
+          Help
+        </a>
+
+
+          <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">
+            Settings
+          </a>
+
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/logout" class="logout-form" data-form-nonce="b9896379d696d8a573afe8d3dcc5921c0c935580" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="9LTdvvVYsdY1lP38x7Bwov7NVQZqP2TAKXXmACiFJjEY5a5yfWWXC/CTIbrITU3F9ba8TP09p3UkkAmw9URIsQ==" /></div>
+            <button class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+              Sign out
+            </button>
+</form>
+      </div>
+    </div>
+  </li>
+</ul>
+
+
+    
+  </div>
+</div>
+
+
+      
+
+
+    <div id="start-of-content" class="accessibility-aid"></div>
+
+      <div id="js-flash-container">
+</div>
+
+
+    <div role="main" class="main-content">
+        <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+    <div id="js-repo-pjax-container" data-pjax-container>
+      
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+  <div class="container repohead-details-container">
+
+    
+
+<ul class="pagehead-actions">
+
+  <li>
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-form-nonce="b9896379d696d8a573afe8d3dcc5921c0c935580" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="gwkmRVLCdPb3DxG+ioly7eyAr21SVs4S36pc1523Pf+Y0qFz7emFsx4luTw099ltIeQ47r5XufC7EiG/2oDGWA==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="887840" />
+
+        <div class="select-menu js-menu-container js-select-menu">
+          <a href="/jackpal/Android-Terminal-Emulator/subscription"
+            class="btn btn-sm btn-with-count select-menu-button js-menu-target" role="button" tabindex="0" aria-haspopup="true"
+            data-ga-click="Repository, click Watch settings, action:wiki#show">
+            <span class="js-select-button">
+              <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6c4.94 0 7.94-6 7.94-6S13 2 8.06 2z m-0.06 10c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4z m2-4c0 1.11-0.89 2-2 2s-2-0.89-2-2 0.89-2 2-2 2 0.89 2 2z"></path></svg>
+              Watch
+            </span>
+          </a>
+          <a class="social-count js-social-count" href="/jackpal/Android-Terminal-Emulator/watchers">
+            185
+          </a>
+
+        <div class="select-menu-modal-holder">
+          <div class="select-menu-modal subscription-menu-modal js-menu-content" aria-hidden="true">
+            <div class="select-menu-header js-navigation-enable" tabindex="-1">
+              <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M7.48 8l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75-1.48-1.48 3.75-3.75L0.77 4.25l1.48-1.48 3.75 3.75 3.75-3.75 1.48 1.48-3.75 3.75z"></path></svg>
+              <span class="select-menu-title">Notifications</span>
+            </div>
+
+              <div class="select-menu-list js-navigation-container" role="menu">
+
+                <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+                  <div class="select-menu-item-text">
+                    <input checked="checked" id="do_included" name="do" type="radio" value="included" />
+                    <span class="select-menu-item-heading">Not watching</span>
+                    <span class="description">Be notified when participating or @mentioned.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6c4.94 0 7.94-6 7.94-6S13 2 8.06 2z m-0.06 10c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4z m2-4c0 1.11-0.89 2-2 2s-2-0.89-2-2 0.89-2 2-2 2 0.89 2 2z"></path></svg>
+                      Watch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+                  <div class="select-menu-item-text">
+                    <input id="do_subscribed" name="do" type="radio" value="subscribed" />
+                    <span class="select-menu-item-heading">Watching</span>
+                    <span class="description">Be notified of all conversations.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6c4.94 0 7.94-6 7.94-6S13 2 8.06 2z m-0.06 10c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4z m2-4c0 1.11-0.89 2-2 2s-2-0.89-2-2 0.89-2 2-2 2 0.89 2 2z"></path></svg>
+                      Unwatch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+                  <div class="select-menu-item-text">
+                    <input id="do_ignore" name="do" type="radio" value="ignore" />
+                    <span class="select-menu-item-heading">Ignoring</span>
+                    <span class="description">Never be notified.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-mute" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8 2.81v10.38c0 0.67-0.81 1-1.28 0.53L3 10H1c-0.55 0-1-0.45-1-1V7c0-0.55 0.45-1 1-1h2l3.72-3.72c0.47-0.47 1.28-0.14 1.28 0.53z m7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06 1.97 1.97-1.97 1.97 1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06-1.97-1.97 1.97-1.97z"></path></svg>
+                      Stop ignoring
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+</form>
+  </li>
+
+  <li>
+    
+  <div class="js-toggler-container js-social-container starring-container ">
+
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/jackpal/Android-Terminal-Emulator/unstar" class="starred" data-form-nonce="b9896379d696d8a573afe8d3dcc5921c0c935580" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="7kLn2UEMIpgin8+QVP5p+3fgk2JUJuSc+PH5QAW8bAej27aGpVS+WrvE2uNfS+lWBtWnC0RFyftDmSc4eU9QZQ==" /></div>
+      <button
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Unstar this repository" title="Unstar jackpal/Android-Terminal-Emulator"
+        data-ga-click="Repository, click unstar button, action:wiki#show; text:Unstar">
+        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M14 6l-4.9-0.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14l4.33-2.33 4.33 2.33L10.4 9.26 14 6z"></path></svg>
+        Unstar
+      </button>
+        <a class="social-count js-social-count" href="/jackpal/Android-Terminal-Emulator/stargazers">
+          1,214
+        </a>
+</form>
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/jackpal/Android-Terminal-Emulator/star" class="unstarred" data-form-nonce="b9896379d696d8a573afe8d3dcc5921c0c935580" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="eJiCV9oPL315IBOX1yXP+6r3MRl/HwJZfPe5mTy831Doxfx8SwP9lS/nJ1Ts0UyD7upId5Rkwazl3utFI3dBwA==" /></div>
+      <button
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Star this repository" title="Star jackpal/Android-Terminal-Emulator"
+        data-ga-click="Repository, click star button, action:wiki#show; text:Star">
+        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M14 6l-4.9-0.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14l4.33-2.33 4.33 2.33L10.4 9.26 14 6z"></path></svg>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="/jackpal/Android-Terminal-Emulator/stargazers">
+          1,214
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/jackpal/Android-Terminal-Emulator/fork" class="btn-with-count" data-form-nonce="b9896379d696d8a573afe8d3dcc5921c0c935580" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="3IMjPwI6mAC9XQewvmQlXmnXyIB4pBrvd7OlURC3qgFUWAetSBSTPj+V5b+1rDUsmU/mVHIm9+m4RaQIW3ijnw==" /></div>
+            <button
+                type="submit"
+                class="btn btn-sm btn-with-count"
+                data-ga-click="Repository, show fork modal, action:wiki#show; text:Fork"
+                title="Fork your own copy of jackpal/Android-Terminal-Emulator to your account"
+                aria-label="Fork your own copy of jackpal/Android-Terminal-Emulator to your account">
+              <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path d="M8 1c-1.11 0-2 0.89-2 2 0 0.73 0.41 1.38 1 1.72v1.28L5 8 3 6v-1.28c0.59-0.34 1-0.98 1-1.72 0-1.11-0.89-2-2-2S0 1.89 0 3c0 0.73 0.41 1.38 1 1.72v1.78l3 3v1.78c-0.59 0.34-1 0.98-1 1.72 0 1.11 0.89 2 2 2s2-0.89 2-2c0-0.73-0.41-1.38-1-1.72V9.5l3-3V4.72c0.59-0.34 1-0.98 1-1.72 0-1.11-0.89-2-2-2zM2 4.2c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z m3 10c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z m3-10c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z"></path></svg>
+              Fork
+            </button>
+</form>
+    <a href="/jackpal/Android-Terminal-Emulator/network" class="social-count">
+      488
+    </a>
+  </li>
+</ul>
+
+    <h1 class="entry-title public ">
+  <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M4 9h-1v-1h1v1z m0-3h-1v1h1v-1z m0-2h-1v1h1v-1z m0-2h-1v1h1v-1z m8-1v12c0 0.55-0.45 1-1 1H6v2l-1.5-1.5-1.5 1.5V14H1c-0.55 0-1-0.45-1-1V1C0 0.45 0.45 0 1 0h10c0.55 0 1 0.45 1 1z m-1 10H1v2h2v-1h3v1h5V11z m0-10H2v9h9V1z"></path></svg>
+  <span class="author" itemprop="author"><a href="/jackpal" class="url fn" rel="author">jackpal</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a href="/jackpal/Android-Terminal-Emulator" data-pjax="#js-repo-pjax-container">Android-Terminal-Emulator</a></strong>
+
+</h1>
+
+  </div>
+  <div class="container">
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax"
+     itemscope
+     itemtype="http://schema.org/BreadcrumbList"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container">
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/jackpal/Android-Terminal-Emulator" class="js-selected-navigation-item reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /jackpal/Android-Terminal-Emulator" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M9.5 3l-1.5 1.5 3.5 3.5L8 11.5l1.5 1.5 4.5-5L9.5 3zM4.5 3L0 8l4.5 5 1.5-1.5L2.5 8l3.5-3.5L4.5 3z"></path></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/jackpal/Android-Terminal-Emulator/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /jackpal/Android-Terminal-Emulator/pulls" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M11 11.28c0-1.73 0-6.28 0-6.28-0.03-0.78-0.34-1.47-0.94-2.06s-1.28-0.91-2.06-0.94c0 0-1.02 0-1 0V0L4 3l3 3V4h1c0.27 0.02 0.48 0.11 0.69 0.31s0.3 0.42 0.31 0.69v6.28c-0.59 0.34-1 0.98-1 1.72 0 1.11 0.89 2 2 2s2-0.89 2-2c0-0.73-0.41-1.38-1-1.72z m-1 2.92c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2zM4 3c0-1.11-0.89-2-2-2S0 1.89 0 3c0 0.73 0.41 1.38 1 1.72 0 1.55 0 5.56 0 6.56-0.59 0.34-1 0.98-1 1.72 0 1.11 0.89 2 2 2s2-0.89 2-2c0-0.73-0.41-1.38-1-1.72V4.72c0.59-0.34 1-0.98 1-1.72z m-0.8 10c0 0.66-0.55 1.2-1.2 1.2s-1.2-0.55-1.2-1.2 0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2z m-1.2-8.8c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z"></path></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="counter">1</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+    <a href="/jackpal/Android-Terminal-Emulator/wiki" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /jackpal/Android-Terminal-Emulator/wiki">
+      <svg aria-hidden="true" class="octicon octicon-book" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M2 5h4v1H2v-1z m0 3h4v-1H2v1z m0 2h4v-1H2v1z m11-5H9v1h4v-1z m0 2H9v1h4v-1z m0 2H9v1h4v-1z m2-6v9c0 0.55-0.45 1-1 1H8.5l-1 1-1-1H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h5.5l1 1 1-1h5.5c0.55 0 1 0.45 1 1z m-8 0.5l-0.5-0.5H1v9h6V3.5z m7-0.5H8.5l-0.5 0.5v8.5h6V3z"></path></svg>
+      Wiki
+</a>
+
+  <a href="/jackpal/Android-Terminal-Emulator/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /jackpal/Android-Terminal-Emulator/pulse">
+    <svg aria-hidden="true" class="octicon octicon-pulse" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0V10h3.6L4.5 8.2l0.9 5.4L9 8.5l1.6 1.5H14V8H11.5z"></path></svg>
+    Pulse
+</a>
+  <a href="/jackpal/Android-Terminal-Emulator/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /jackpal/Android-Terminal-Emulator/graphs">
+    <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M16 14v1H0V0h1v14h15z m-11-1H3V8h2v5z m4 0H7V3h2v10z m4 0H11V6h2v7z"></path></svg>
+    Graphs
+</a>
+
+</nav>
+
+  </div>
+</div>
+
+<div class="container new-discussion-timeline experiment-repo-nav">
+  <div class="repository-content">
+
+    
+
+<div id="wiki-wrapper" class="wiki-wrapper page">
+<div class="gh-header">
+  <div class="gh-header-show">
+    <h1 class="gh-header-title instapaper_title">Android Shell Command Reference</h1>
+      <div class="gh-header-meta">
+        martinjdavidson edited this page <relative-time datetime="2012-12-17T14:04:52Z">Dec 17, 2012</relative-time>
+        &middot;
+        <a href="/jackpal/Android-Terminal-Emulator/wiki/Android-Shell-Command-Reference/_history" class="history">
+          6 revisions
+        </a>
+      </div>
+  </div>
+</div>
+<div id="wiki-content" class="wiki-content">
+  <div class="has-rightbar">
+
+  <div id="wiki-rightbar" class="wiki-rightbar">
+    <div class="wiki-pages-box readability-sidebar boxed-group flush js-wiki-pages-box " role="navigation">
+      
+<h3 class="js-wiki-toggle-collapse wiki-auxiliary-content">
+  <svg aria-hidden="true" class="octicon octicon-triangle-down caret-expanded" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M0 5l6 6 6-6H0z"></path></svg>
+  <svg aria-hidden="true" class="octicon octicon-triangle-right caret-collapsed" height="16" version="1.1" viewBox="0 0 6 16" width="6"><path d="M0 14l6-6L0 2v12z"></path></svg>
+  Pages <span class="counter">15</span>
+</h3>
+<div class="boxed-group-inner wiki-auxiliary-content wiki-auxiliary-content-no-bg">
+
+  <ul class="wiki-pages" data-filterable-for="wiki-pages-filter" data-filterable-type="substring">
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki" class="wiki-page-link">Home</a></strong>
+    </li>
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki/Action-Bar-(Android-3.0-)-UI" class="wiki-page-link">Action Bar (Android 3.0+) UI</a></strong>
+    </li>
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki/Android-Shell-Command-Reference" class="wiki-page-link">Android Shell Command Reference</a></strong>
+    </li>
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki/Buttonless-Device-Support" class="wiki-page-link">Buttonless Device Support</a></strong>
+    </li>
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki/Frequently-Asked-Questions" class="wiki-page-link">Frequently Asked Questions</a></strong>
+    </li>
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki/Installing-BusyBox-and-ssh-without-Rooting-your-Device" class="wiki-page-link">Installing BusyBox and ssh without Rooting your Device</a></strong>
+    </li>
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki/Launching-Terminal-Emulator-for-Android-from-another-App" class="wiki-page-link">Launching Terminal Emulator for Android from another App</a></strong>
+    </li>
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki/Privacy-Policy" class="wiki-page-link">Privacy Policy</a></strong>
+    </li>
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki/Recent-Updates" class="wiki-page-link">Recent Updates</a></strong>
+    </li>
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki/Roadmap" class="wiki-page-link">Roadmap</a></strong>
+    </li>
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki/Tips-for-Including-Terminal-Emulator-for-Android-in-a-Custom-ROM" class="wiki-page-link">Tips for Including Terminal Emulator for Android in a Custom ROM</a></strong>
+    </li>
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki/Translating-to-Other-Languages" class="wiki-page-link">Translating to Other Languages</a></strong>
+    </li>
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki/Troubleshooting-Lack-of-Color-in-Vi" class="wiki-page-link">Troubleshooting Lack of Color in Vi</a></strong>
+    </li>
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki/Unicode-UTF-8-Support" class="wiki-page-link">Unicode UTF 8 Support</a></strong>
+    </li>
+    <li>
+      <strong><a href="/jackpal/Android-Terminal-Emulator/wiki/Wrapping-up-Development-on-Terminal-Emulator-for-Android" class="wiki-page-link">Wrapping up Development on Terminal Emulator for Android</a></strong>
+    </li>
+  </ul>
+</div>
+
+    </div>
+
+
+    <div class="clone-url">
+      <h5>Clone this wiki locally</h5>
+      <div class="input-group js-zeroclipboard-container">
+        <input type="text" class="form-control input-sm text-small text-muted input-monospace js-url-field js-zeroclipboard-target"
+               value="https://github.com/jackpal/Android-Terminal-Emulator.wiki.git" readonly="readonly">
+        <span class="input-group-button">
+          <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><svg aria-hidden="true" class="octicon octicon-clippy" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M2 12h4v1H2v-1z m5-6H2v1h5v-1z m2 3V7L6 10l3 3V11h5V9H9z m-4.5-1H2v1h2.5v-1zM2 11h2.5v-1H2v1z m9 1h1v2c-0.02 0.28-0.11 0.52-0.3 0.7s-0.42 0.28-0.7 0.3H1c-0.55 0-1-0.45-1-1V3c0-0.55 0.45-1 1-1h3C4 0.89 4.89 0 6 0s2 0.89 2 2h3c0.55 0 1 0.45 1 1v5h-1V5H1v9h10V12zM2 4h8c0-0.55-0.45-1-1-1h-1c-0.55 0-1-0.45-1-1s-0.45-1-1-1-1 0.45-1 1-0.45 1-1 1h-1c-0.55 0-1 0.45-1 1z"></path></svg></button>
+        </span>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div id="wiki-body" class="wiki-body gollum-markdown-content instapaper_body">
+      <div class="markdown-body">
+        <h1>
+<a id="user-content-the-android-shell" class="anchor" href="#the-android-shell" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>The Android Shell</h1>
+
+<p>A "shell" is a program that listens to keyboard input from a user and performs actions as directed by the user. Android devices come with a simple shell program. This shell program is mostly undocumented. Since many people are curious about it I thought I'd write up some documentation for it.</p>
+
+<pre><code>Currently this documentation is incomplete, sorry!
+</code></pre>
+
+<h2>
+<a id="user-content-common-problems" class="anchor" href="#common-problems" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Common problems</h2>
+
+<p>The built-in shell has very limited error handling. When you type a command name incorrectly it will say "permission denied", even though the real problem is that it couldn't find the command:</p>
+
+<pre><code>$ dir
+dir: permission denied  &lt;---- this is a misleading error message, should say 'dir: not found'
+$ ls
+... listing of current directory
+</code></pre>
+
+<h1>
+<a id="user-content-the-path-variable" class="anchor" href="#the-path-variable" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>The PATH variable</h1>
+
+<p>The Android shell will run any program it finds in its PATH. The PATH is a colon (':') seperated list of directories. You can find out what your shell's PATH is set to by using the built-in echo command:</p>
+
+<pre><code>$ echo $PATH
+/data/local/bin:/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
+</code></pre>
+
+<p>Depending upon your shell, you may see a different result.</p>
+
+<h1>
+<a id="user-content-built-in-commands" class="anchor" href="#built-in-commands" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Built in Commands</h1>
+
+<p>Every shell has a few built-in commands. Some common built-in commands are:</p>
+
+<ul>
+<li>echo -- prints text to stdout. </li>
+<li>set -- sets shell variables</li>
+<li>export -- makes shell variables available to command-line programs</li>
+<li>cd -- change the current directory.</li>
+<li>pwd -- print name of the current directory.</li>
+</ul>
+
+<h1>
+<a id="user-content-commands" class="anchor" href="#commands" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Commands</h1>
+
+<p>To find out what commands you have available to you, use the "ls" command on each of the directories in the PATH variable.</p>
+
+<h2>
+<a id="user-content-finding-documentation-for-the-android-commands" class="anchor" href="#finding-documentation-for-the-android-commands" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Finding documentation for the Android commands.</h2>
+
+<p>Many of the Android commands are based on standard Linux (or bsd) commands. If you're curious about a command, you can sometimes learn how it works by using the "man" command on a desktop Linux or OSX (Apple Macintosh) computer. The Linux or OSX version of the command may be different in details, but much of the documentation will still apply to the Android version of the command.</p>
+
+<p>Another source of documentation for people without a Linux or OSX machine handy is to use a web browser and use a web search engine to search for the text: "man Linux command-name".</p>
+
+<h2>
+<a id="user-content-list-of-commands" class="anchor" href="#list-of-commands" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>List of commands</h2>
+
+<p>The following is a list of the commands that are present on a Nexus S phone running an Android 2.3.3 "user-debug" build. Many of these commands are not present on a "user" phone. (They are missing from a "user" phone because they are specific to developing or debugging the Android operating system.)</p>
+
+<pre><code>$ ls /data/local/bin
+/data/local/bin: No such file or directory
+</code></pre>
+
+<p>Notice that by default there is no /data/local/bin directory. You can create this directory using the "mkdir" command if you like.</p>
+
+<pre><code>$ ls /sbin
+opendir failed, Permission denied
+</code></pre>
+
+<p>The /sbin directory exists, but you don't have permission to access it. You need root access. If you have a developer phone, or otherwise have root access to your phone you can see what's in this directory.</p>
+
+<pre><code>$ su
+# ls /sbin
+ueventd
+adbd
+# exit
+$ 
+</code></pre>
+
+<p>Notice that the shell prompt changes from a '$' to a '#' to indicate that you have root access.</p>
+
+<p>Notice also that neither of the /sbin commands are useful to the shell -- the adb and ueventd files are 'daemon' programs used to implement the Android Debugger "adb" program that is used by developers.</p>
+
+<pre><code>$ ls /vendor/bin
+gpsd
+pvrsrvinit
+</code></pre>
+
+<p>Vendor/bin is where device vendors can put device-specific executables. These files are from a Nexus S.</p>
+
+<pre><code>$ ls /system/sbin
+/system/sbin: No such file or directory
+</code></pre>
+
+<p>This directory does not exist on a Nexus S.</p>
+
+<pre><code>$ ls /system/bin
+am
+</code></pre>
+
+<p>am is the Android Activity Manager. It's used to start and stop Android activities (e.g. applications) from
+the command line. Type am by itself to get a list of options.</p>
+
+<pre><code>amix
+aplay
+</code></pre>
+
+<p>Command line audio file player.</p>
+
+<pre><code>app_process
+applypatch
+</code></pre>
+
+<p>Used to apply patches to android files.</p>
+
+<pre><code>arec
+</code></pre>
+
+<p>Command line audio recorder.</p>
+
+<pre><code>audioloop
+bluetoothd
+</code></pre>
+
+<p>BlueTooth daemon</p>
+
+<pre><code>bmgr
+</code></pre>
+
+<p>Backup manager - type command by itself to get documentation.</p>
+
+<pre><code>bootanimation
+</code></pre>
+
+<p>Draws the boot animation. You may have to reset your phone to get out of this.</p>
+
+<pre><code>brcm_patchram_plus
+bugreport
+cat
+</code></pre>
+
+<p>Copy the contents of a file to standard output.</p>
+
+<pre><code>chmod
+</code></pre>
+
+<p>Change the mode of a file (e.g. whether it can be read or written.)</p>
+
+<pre><code>chown
+</code></pre>
+
+<p>Change the owner of a file.</p>
+
+<pre><code>cmp
+</code></pre>
+
+<p>Compare two files byte-by-byte</p>
+
+<pre><code>dalvikvm
+</code></pre>
+
+<p>The dalvik virtual machine. (Used to run Android applications.)</p>
+
+<pre><code>date
+</code></pre>
+
+<p>Prints the current date and time</p>
+
+<pre><code>dbus-daemon
+dd
+</code></pre>
+
+<p>Convert and copy a file. By default copies standard in to standard out.</p>
+
+<pre><code>debuggerd
+dexopt
+df
+</code></pre>
+
+<p>Shows how much space is free on different file systems on your device.</p>
+
+<pre><code>dhcpcd
+dmesg
+dnsmasq
+dumpstate
+dumpsys
+dvz
+fsck_msdos
+gdbserver
+getevent
+getprop
+gzip
+hciattach
+hd
+id
+ifconfig
+</code></pre>
+
+<p>Shows the current configuration of network interfaces (IP, MAC address etc)</p>
+
+<pre><code>iftop
+</code></pre>
+
+<p>Shows the current processes using the network interfaces (top, but for networks)</p>
+
+<pre><code>ime
+input
+insmod
+installd
+ioctl
+ionice
+iptables
+</code></pre>
+
+<p>Manage the firewall </p>
+
+<pre><code>keystore
+keystore_cli
+kill
+</code></pre>
+
+<p>Send signals to processes.</p>
+
+<pre><code>linker
+ln
+</code></pre>
+
+<p>Used to set up a file system link.</p>
+
+<pre><code>log
+logcat
+</code></pre>
+
+<p>Prints the Android runtime log.</p>
+
+<pre><code>logwrapper
+ls
+</code></pre>
+
+<p>Lists files.</p>
+
+<pre><code>lsmod
+lsof
+make_ext4fs
+mediaserver
+mkdir
+</code></pre>
+
+<p>Make a directory.</p>
+
+<pre><code>monkey
+</code></pre>
+
+<p>A program that sends random events, used to test applications. (Like having a monkey playing with the device.)</p>
+
+<pre><code>mount
+mtpd
+mv
+</code></pre>
+
+<p>Move a file from one directory to another. (Only on the same file system. Use "cat a &gt; b" to copy a
+file between file systems.</p>
+
+<pre><code>nandread
+ndc
+netcfg
+netd
+netstat
+newfs_msdos
+notify
+omx_tests
+pand
+ping
+pm
+pppd
+printenv
+ps
+</code></pre>
+
+<p>List active processes.</p>
+
+<pre><code>qemu-props
+qemud
+racoon
+radiooptions
+reboot
+</code></pre>
+
+<p>Reboot the device.</p>
+
+<pre><code>record
+renice
+rild
+rm
+</code></pre>
+
+<p>Remove a file.</p>
+
+<pre><code>rmdir
+</code></pre>
+
+<p>Remove a directory.</p>
+
+<pre><code>rmmod
+route
+rtp_test
+run-as
+schedtest
+schedtop
+sdcard
+sdptool
+sendevent
+service
+servicemanager
+setconsole
+setprop
+setup_fs
+sh
+showlease
+sleep
+smd
+stagefright
+start
+</code></pre>
+
+<p>Starts the Android runtime.</p>
+
+<pre><code>stop
+</code></pre>
+
+<p>Stops the Android runtime.</p>
+
+<pre><code>surfaceflinger
+svc
+sync
+system_server
+tc
+testid3
+toolbox
+top
+</code></pre>
+
+<p>Shows which processes are currently using the most CPU time.</p>
+
+<pre><code>umount
+uptime
+</code></pre>
+
+<p>Prints how long your device has been running since it was last booted.</p>
+
+<pre><code>vdc
+vmstat
+vold
+watchprops
+wipe
+wpa_cli
+wpa_supplicant
+
+$ ls /system/xbin
+add-property-tag
+btool
+check-lost+found
+dexdump
+dhdutil
+hcidump
+latencytop
+librank
+opcontrol
+oprofiled
+procmem
+procrank
+rawbu
+scp
+</code></pre>
+
+<p>Secure copy program. (Used to copy files over the network.)</p>
+
+<pre><code>showmap
+showslab
+sqlite3
+</code></pre>
+
+<p>Used to administer SQLite databases.</p>
+
+<pre><code>strace
+</code></pre>
+
+<p>System trace command - use to see what system calls a program makes.</p>
+
+<pre><code>su
+</code></pre>
+
+<p>Start a shell with root privileges.</p>
+
+<h1>
+<a id="user-content-versions-of-the-android-shell" class="anchor" href="#versions-of-the-android-shell" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Versions of the Android Shell</h1>
+
+<ul>
+<li>Android 1.0 used a shell that had no tab completion or history editing.</li>
+<li>Android 2.3 added history editing. You can for example use the up/down arrows to edit previous commands.</li>
+</ul>
+
+<h1>
+<a id="user-content-other-shells" class="anchor" href="#other-shells" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Other shells</h1>
+
+<h1>
+<a id="user-content-busybox" class="anchor" href="#busybox" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Busybox</h1>
+
+<p>Busybox is a program that contains a shell and a set of command line utilities. Search Android Market for "Busybox" and you should find some versions you can install. The Busybox shell includes tab completion and history editing. Some versions of Busybox for Android do not require that you root your phone.</p>
+
+<h1>
+<a id="user-content-debian-utilities" class="anchor" href="#debian-utilities" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Debian utilities</h1>
+
+<p>You can install the full Debian shell and utilities. (Debian is a popular desktop Linux distribution.) I don't know the details, and it may require a "rooted" phone. Try a web search for "Debian Android install".</p>
+
+<h1>
+<a id="user-content-custom-roms" class="anchor" href="#custom-roms" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Custom ROMs</h1>
+
+<p>Some custom ROMs come with their own shells and utilities. If you are using a custom ROM, check its documentation to find out what's available.</p>
+
+      </div>
+
+  </div>
+  </div>
+</div>
+</div>
+
+
+  </div>
+  <div class="modal-backdrop"></div>
+</div>
+
+
+    </div>
+  </div>
+
+    </div>
+
+        <div class="container site-footer-container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com" aria-label="Homepage" class="site-footer-mark" title="GitHub">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+</a>
+    <ul class="site-footer-links">
+      <li>&copy; 2016 <span title="0.08458s from github-fe132-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+    
+
+    <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+      <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M15.72 12.5l-6.85-11.98C8.69 0.21 8.36 0.02 8 0.02s-0.69 0.19-0.87 0.5l-6.85 11.98c-0.18 0.31-0.18 0.69 0 1C0.47 13.81 0.8 14 1.15 14h13.7c0.36 0 0.69-0.19 0.86-0.5S15.89 12.81 15.72 12.5zM9 12H7V10h2V12zM9 9H7V5h2V9z"></path></svg>
+      <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+        <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M7.48 8l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75-1.48-1.48 3.75-3.75L0.77 4.25l1.48-1.48 3.75 3.75 3.75-3.75 1.48 1.48-3.75 3.75z"></path></svg>
+      </button>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      
+      <script crossorigin="anonymous" integrity="sha256-f6u653SivR0NG5QW7j5edtlySC5ZhzCJPknvYCTYf6E=" src="https://assets-cdn.github.com/assets/frameworks-7fabbae774a2bd1d0d1b9416ee3e5e76d972482e598730893e49ef6024d87fa1.js"></script>
+      <script async="async" crossorigin="anonymous" integrity="sha256-IHI22cNP9boMWUH4d99SybU8TdrZoSXF0glP7TMA6hc=" src="https://assets-cdn.github.com/assets/github-207236d9c34ff5ba0c5941f877df52c9b53c4ddad9a125c5d2094fed3300ea17.js"></script>
+      
+      
+      
+        <script crossorigin="anonymous" integrity="sha256-+hT/zU5SrG2yMrotlR8HgWqwetd69FfwPka2rCeP2PI=" src="https://assets-cdn.github.com/assets/wiki-fa14ffcd4e52ac6db232ba2d951f07816ab07ad77af457f03e46b6ac278fd8f2.js"></script>
+
+      
+      
+    <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+      <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M15.72 12.5l-6.85-11.98C8.69 0.21 8.36 0.02 8 0.02s-0.69 0.19-0.87 0.5l-6.85 11.98c-0.18 0.31-0.18 0.69 0 1C0.47 13.81 0.8 14 1.15 14h13.7c0.36 0 0.69-0.19 0.86-0.5S15.89 12.81 15.72 12.5zM9 12H7V10h2V12zM9 9H7V5h2V9z"></path></svg>
+      <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+      <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    </div>
+    <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M7.48 8l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75-1.48-1.48 3.75-3.75L0.77 4.25l1.48-1.48 3.75 3.75 3.75-3.75 1.48 1.48-3.75 3.75z"></path></svg>
+    </button>
+  </div>
+</div>
+
+  </body>
+</html>
+
