@@ -11,5 +11,3 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./app/:./
 
 chmod a+x app/ConsoleApp1
 ./app/ConsoleApp1
-
-cat b.txt
