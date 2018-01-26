@@ -1,12 +1,12 @@
 {
   "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v2.0/ubuntu.14.04-x64",
+    "name": ".NETCoreApp,Version=v2.0/linux-x64",
     "signature": "f4ad079d250ce3a815b7f777efb9770fb42a1a67"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.0": {},
-    ".NETCoreApp,Version=v2.0/ubuntu.14.04-x64": {
+    ".NETCoreApp,Version=v2.0/linux-x64": {
       "ConsoleApp1/1.0.0": {
         "dependencies": {
           "Microsoft.NETCore.App": "2.0.0"
