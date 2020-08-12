@@ -39,3 +39,8 @@ jobs:
     
     - name: Dump .net Version
       run: dotnet --info
+    
+    - name: Dump os info
+      run: |
+        cat /etc/os-release
+        cat /etc/lsb-release
