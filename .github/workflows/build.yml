@@ -27,7 +27,7 @@ jobs:
     - name: Set Version
       run: |
         echo "::set-env name=PACKAGE_VERSION::1.0.$GITHUB_RUN_NUMBER"
-        echo $FOO
+        echo $PACKAGE_VERSION
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
@@ -49,3 +49,18 @@ jobs:
       run: |
         cat /etc/os-release
         echo ${{ env.PACKAGE_VERSION }}
+        echo Release ${{ github.ref }}
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      with:
+        tag_name: ${{ env.PACKAGE_VERSION }}
+        release_name: Release ${{ env.PACKAGE_VERSION }}
+        body: |
+          Changes in this Release
+          - First Change
+          - Second Change
+        draft: false
+        prerelease: false
