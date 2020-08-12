@@ -27,6 +27,8 @@ jobs:
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: echo Hello, world!
+      env:
+        PACKAGE_VERSION: 1.0.${{ env.GITHUB_RUN_NUMBER }}
 
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
@@ -43,4 +45,4 @@ jobs:
     - name: Dump os info
       run: |
         cat /etc/os-release
-        cat /etc/lsb-release
+        echo ${{ env.PACKAGE_VERSION }}
