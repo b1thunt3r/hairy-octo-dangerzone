@@ -64,3 +64,5 @@ jobs:
           - Second Change
         draft: false
         prerelease: false
+    - name: Test Zip
+      run: zip --help
